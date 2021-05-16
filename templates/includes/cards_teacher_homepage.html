@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cards</title>
+    {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+</head>
+<body>
+  <div class="main">
+  <div class="cards1">
+    <div class="image1">
+      <img src="{% static 'css/static/img/save2.svg' %}" alt="">
+
+    </div>
+    <div class="title">
+      <h1>Saved Quiz</h1>
+
+    </div>
+    <div class="des">
+      <p></p>
+      <form action="{% url 'polls:quiz-list' %}">
+      <button ><b>SAVED QUIZ</b></button>
+      </form>
+    </div>
+
+
+  </div>
+  <div class="cards2">
+    <div class="image1">
+      <img src="{% static 'css/static/img/file-earmark-plus.svg' %}" alt="">
+
+    </div>
+    <div class="title">
+      <h1>Create Quiz</h1>
+
+    </div>
+    <div class="des">
+      <p></p>
+      <form action="{% url 'polls:create-quiz' %}">
+      <button><b>CREATE QUIZ</b></button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+    <div class="cards3">
+      <div class="image1">
+        <img src="{% static 'css/static/img/person-plus.svg' %}" alt="">
+
+      </div>
+      <div class="title">
+        <h1>Create Class</h1>
+
+      </div>
+      <div class="des">
+        <p></p>
+        <form action="{% url 'polls:create-classroom' %}">
+        <button><b>CREATE CLASS</b></button>
+        </form>
+      </div>
+
+
+    </div>
+    <div class="cards4">
+      <div class="image1">
+        <img src="{% static 'css/static/img/people .svg' %}" alt="">
+
+      </div>
+      <div class="title">
+        <h1>Classrooms</h1>
+
+      </div>
+      <div class="des">
+        <p></p>
+        <form action="{% url 'polls:classroom-list' %}">
+        <button><b>CLASSROOMS</b></button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+</html>

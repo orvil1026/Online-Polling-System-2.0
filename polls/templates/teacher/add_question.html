@@ -1,0 +1,135 @@
+{% include 'base.html' %}
+{% block content %}
+{% include 'includes/sidebar.html' %}
+
+
+<div class="container-fluid h-100 bg-light text-dark">
+  <div class="row justify-content-center align-items-center">
+    <h1>Add Question</h1>
+  </div>
+  <hr/>
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+      <form action="">
+          <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Question</span>
+          <input type="text" name="question" class="form-control" placeholder="Enter the question" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+
+        <div class="input-group mb-3">
+        <div class="input-group-text">
+            Option 1:
+        </div>
+
+            <input type="text" name="option1" class="form-control" aria-label="Text input with checkbox">
+        </div>
+
+          <div class="input-group mb-3">
+        <div class="input-group-text">
+            Option 2:
+        </div>
+
+            <input type="text" name="option2" class="form-control" aria-label="Text input with checkbox">
+        </div>
+
+          <div class="input-group mb-3">
+        <div class="input-group-text">
+            Option 3:
+        </div>
+
+            <input type="text" name="option3" class="form-control" aria-label="Text input with checkbox">
+        </div>
+
+          <div class="input-group mb-3">
+        <div class="input-group-text">
+            Option 4:
+        </div>
+
+            <input type="text" name="option4" class="form-control" aria-label="Text input with checkbox">
+        </div>
+
+
+        <div class="form-group text-center">
+            Answer:
+
+            {% for field in form %}
+		<div class="form-check-inline">
+			{{ field.errors }}
+
+
+			 <div class="form-check-inline">{{ field }}
+				 {% if field.help_text %}
+                            <p class="help-inline"><small>{{ field.help_text }}</small></p>
+				 {% endif %}
+			 </div>
+
+
+		</div>
+
+		{% endfor %}
+
+
+        </div>
+
+        <div class="form-group">
+          <div class="container">
+            <div class="row justify-content-center">
+              <button class="col-6 btn btn-primary btn-sm float-center">Add</button></div>
+            </div>
+          </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">-->
+<!--  <div class="row justify-content-center">-->
+<!--    <h1>Add Question</h1>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+<!--	<form action="" method="POST">-->
+
+<!--		{% csrf_token %}-->
+
+
+
+
+<!--		<button type="submit" class="btn btn-primary">Add</button>-->
+<!--	</form>-->
+<!--</div>-->
+{% endblock%}

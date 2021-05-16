@@ -1,0 +1,67 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Classroom Details</h1>
+
+  </div>
+  <hr>
+    <div class="row justify-content-center">
+
+      <h3>{{ classroom.c_name }}</h3>
+  </div>
+    <div class="row justify-content-center">
+
+      <h3>Class Id:{{ classroom.class_id }}</h3>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row justify-content-center">
+    <h4>Active Quizzes:</h4>
+  </div>
+    <div class="row justify-content-center">
+      {% for quiz in quiz_list %}
+        <div class="card w-75 mt-3">
+      <div class="card">
+        <div class="card-body">
+<!--         Name:{{ quiz.quiz_name }} <br>-->
+<!--          <a class="btn btn-warning mt-3" href="" role="button">Back</a>-->
+            <h5 class="card-header d-flex justify-content-between align-items-center text-white bg-secondary">
+        Name:{{ quiz.quiz_name }}
+      <a class="btn btn-sm btn-danger" href="{% url  'polls:quiz-detail' quiz.id %}" role="button">Details</a>
+      </h5>
+        </div>
+      </div></div>
+
+
+      {% endfor %}
+
+  </div></div>
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-center">
+
+      <h3>Students</h3>
+  </div>
+  <div class="row justify-content-center">
+    {% for student in student_list %}
+        <div class="card w-75 mt-3">
+      <div class="card">
+        <div class="card-body">
+         Name:{{ student.first_name }} {{ student.last_name }}<br>
+            Roll No: {{ student.roll_no }}
+        </div>
+      </div></div>
+
+
+      {% endfor %}
+  </div>
+          <a class="btn btn-primary mt-3" href="{% url 'polls:classroom-list'  %}" role="button">Back</a>
+
+</div>
+
+{% endblock %}

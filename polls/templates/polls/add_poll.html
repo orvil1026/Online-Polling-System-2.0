@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% include 'includes/sidebar.html' %}
+{% block content %}
+<div class="container">
+    <div class="row center">
+        <div class="col-md-6 offset-md-3">
+            <h2>Create new poll</h2>
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Add Poll</button>
+                <a class="btn btn-warning" href="{% url 'polls:quiz-detail' quiz_pk=quiz_pk  %}" role="button">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

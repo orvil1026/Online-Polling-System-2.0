@@ -1,0 +1,56 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Quizzes</h1>
+  </div>
+    <div class="row justify-content-center">
+
+   {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+
+  </div>
+</div>
+
+{% for object in object_list %}
+{% if forloop.counter0|divisibleby:3 %} <div class="row"> {%  endif %}
+    <div class="col-md-4">
+    <div class="card text-center">
+
+  <div class="card-body text-white bg-dark">
+    <h5 class="card-title">{{object.quiz_name}}</h5>
+    <p class="card-text">Quiz Id:{{object.quiz_id}}<br>
+
+     {% if object.classroom %}
+   Quiz Active in Classroom: {{object.classroom.c_name}}
+        {% else %}
+        <br>
+      {% endif %}
+
+    </p>
+
+    <a href="{{ object.get_absolute_url }}" class="btn btn-primary">Details</a>
+    <a href="{% url 'polls:quiz-delete' object.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'polls:quiz-to-classroom' object.id %}" class="btn btn-warning">Add to Classroom</a>
+  </div>
+
+    </div>
+    </div>
+{%  if forloop.counter|divisibleby:3 or forloop.last %}</div><br>{%  endif %}
+{%  endfor %}
+
+
+{% endblock %}

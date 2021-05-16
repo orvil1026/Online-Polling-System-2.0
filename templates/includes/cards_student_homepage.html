@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cards</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+</head>
+<body>
+  <div class="main">
+  <div class="cards1">
+    <div class="image1">
+      <img src="{% static 'css/static/img/book.svg' %}" alt="">
+
+    </div>
+    <div class="title"> 
+      <h1>Join Quiz</h1>
+
+    </div>
+    <div class="des">
+      <p></p>
+      <form action="{% url 'polls:quiz' %}">
+      <button><b>JOIN QUIZ</b></button>
+      </form>
+    </div>
+
+
+  </div>
+  <div class="cards2">
+    <div class="image1">
+      <img src="{% static 'css/static/img/person-check.svg' %}" alt="">
+
+    </div>
+    <div class="title"> 
+      <h1>Join Class</h1>
+
+    </div>
+    <div class="des">
+      <p></p>
+      <form action="{% url 'polls:join-classroom' %}">
+      <button><b>JOIN CLASSROOM</b></button>
+      </form>
+    </div>  
+  </div> 
+  <div class="cards3">
+    <div class="image1">
+      <img src="{% static 'css/static/img/people .svg' %}" alt="">
+
+    </div>
+    <div class="title"> 
+      <h1>Classrooms</h1>
+
+    </div>
+    <div class="des">
+      <p></p>
+      <form action="{% url 'polls:student-classroom-list' %}">
+      <button><b>CLASSROOMS</b></button>
+      </form>
+    </div>  
+  </div> 
+  
+  </div>  
+  
+    
+</body>
+</html>

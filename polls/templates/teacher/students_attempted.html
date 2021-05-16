@@ -1,0 +1,32 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Students Attempted</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    {% for vote in vote_set %}
+        <div class="card w-75 mt-3">
+      <div class="card">
+        <div class="card-body">
+         Name:{{ vote.student.first_name }} {{ vote.student.last_name }}<br>
+            Roll No: {{ vote.student.roll_no }}
+        </div>
+      </div></div>
+
+
+      {% endfor %}
+  </div>
+          <a class="btn btn-primary mt-3" href="{% url 'polls:quiz-detail' quiz_pk %}" role="button">Back</a>
+
+</div>
+
+
+
+
+
+{% endblock %}

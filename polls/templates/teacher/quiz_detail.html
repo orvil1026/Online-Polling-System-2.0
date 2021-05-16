@@ -1,0 +1,129 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Quiz-{{object.quiz_name}}</h1>
+
+  </div>
+    <div class="row justify-content-center">
+    {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+
+  </div>
+</div>
+
+<div class="card text-center">
+
+  <div class="card-body">
+      <div class="row justify-content-center">
+        <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Start time:</b> {{ object.start_time}}</li>
+            <li class="list-group-item"><b>End time:</b> {{ object.end_time }}</li>
+            <li class="list-group-item"><b>Quiz Id:</b>{{ object.quiz_id }}</li>
+            {% if object.classroom %}
+            <li class="list-group-item"><b>Quiz Active in Class:</b>{{ object.classroom.c_name }}</li>
+            {% endif %}
+            <li class="list-group-item"><b>Active:</b>
+                {% if  object.active%}
+                        <i class="fas fa-check-circle ml-2"></i>
+                        <a href="{% url 'polls:end-quiz' object.id %}" class="btn  btn-sm btn-danger">
+                            <i class="far fa-stop-circle float-right"></i>
+                        </a>
+
+                {% else %}
+                        <i class="fas fa-times-circle"></i>
+
+                        <a href="{% url 'polls:end-quiz' object.id %}" class="btn  btn-sm btn-success">
+                        <i class="fas fa-play float-right"></i>
+                        </a>
+                    {% endif %}
+                </li>
+        <li class="list-group-item">
+            <a href="{% url 'polls:quiz-update' object.id %}" class="btn btn-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>Edit</a>
+
+        </li>
+            <li class="list-group-item">
+
+                <a href="{% url 'polls:addPoll' object.id %}" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                Add Poll</a>
+
+            </li>
+
+
+      </ul>
+    </div>
+      </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Polls</h1>
+  </div>
+</div>
+
+
+<div class="container">
+	<div class="row justify-content-center">
+        {% for question in question_list %}
+    <div class="card w-75 mt-3">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+      <p class="card-text"><b>{{ forloop.counter }}){{ question.text }}
+      {% if  question.active%}
+                        <span class="badge rounded-pill bg-success">Active</span>
+                        {% endif %}
+      </b></p>
+      {% if object.active%}
+      {% if question.active %}
+
+                    <a href="{% url 'polls:end-poll' poll_id=question.id quiz_pk=object.id%}" data-toggle="tooltip" data-placement="top" title="End Poll"
+                        onclick="return confirm('Are you sure ?')"><i class="fas fa-stop-circle float-right btn btn-danger btn-sm"></i></a>
+
+      {% else %}
+                    <a href="{% url 'polls:end-poll' poll_id=question.id quiz_pk=object.id%}" data-toggle="tooltip" data-placement="top" title="Start Poll"
+                        onclick="return confirm('Are you sure ?')"><i class="fas fa-play-circle float-right btn btn-success btn-sm"></i></a>
+
+      {% endif %}
+      {% endif %}
+    <a href="{% url 'polls:detail' poll_id=question.id quiz_pk=object.id %}" class="btn btn-primary">Details</a>
+    <a href="{% url 'polls:delete_poll' poll_id=question.id quiz_pk=object.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'polls:teacher-resultsdata' poll_id=question.id quiz_pk=object.id %}" class="btn btn-warning">Results</a>
+    <a href="{% url 'polls:students-attempted' poll_id=question.id quiz_pk=object.id %}" class="btn btn-info">Students attempted</a>
+
+<!--      {% if object.classroom %}-->
+<!--      <a href="{% url 'polls:students-attempted' poll_id=question.id quiz_pk=object.id %}" class="btn btn-secondary">Students Remmaining in Class</a>-->
+<!--       {% endif %}-->
+  </div>
+</div>
+        <br><br>
+        <br>
+        {% endfor %}
+
+</div>
+                <a class="btn btn-dark mt-3" href="{% url 'polls:quiz-list' %}" role="button">Back</a>
+
+</div>
+{% endblock%}

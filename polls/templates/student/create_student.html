@@ -1,0 +1,38 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/student-sidebar.html' %}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Details</h1>
+  </div>
+</div>
+
+
+<div class="container">
+	<div class="row justify-content-center">
+
+	<form  action="" method="POST">
+
+
+
+		{% csrf_token %}
+
+		{% for field in form %}
+		<div class="form-group">
+			{{ field.errors }}
+
+			 <label for="{{ field.label }}" class="control-label">{{ field.label }}</label>
+			 <div class="controls">{{ field }}
+				 {% if field.help_text %}
+                            <p class="help-inline"><small>{{ field.help_text }}</small></p>
+				 {% endif %}
+			 </div>
+
+
+		</div>
+		{% endfor %}
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+	</div></div>
+{% endblock%}

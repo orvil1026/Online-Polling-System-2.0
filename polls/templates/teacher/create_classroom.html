@@ -1,0 +1,33 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Create Classroom</h1>
+  </div>
+</div>
+
+
+<div class="container">
+	<div class="row justify-content-center">
+
+	<form action="" method="POST">
+
+
+
+		{% csrf_token %}
+
+		{% for field in form %}
+		<div class="form-group">
+			{{ field.errors }}
+
+			{{ field.label_tag }}
+			{{ field }}
+
+		</div>
+		{% endfor %}
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+</div></div>
+{% endblock%}

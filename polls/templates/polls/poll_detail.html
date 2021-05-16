@@ -1,0 +1,55 @@
+ {% include 'base.html' %}
+{% include 'includes/sidebar.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Polls details page</h1>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <hr>
+
+
+
+    <h5 class="card-header d-flex justify-content-between align-items-center text-white bg-secondary">
+        {{ poll.text }}
+  <a class="btn btn-sm btn-danger" href="{% url 'polls:edit' poll_id=poll.id quiz_pk=quiz_pk  %}" role="button">Edit</a>
+    </h5>
+    <br>
+
+
+
+
+        {% for choice in poll.choice_set.all %}
+
+        <h5 class="card-header d-flex justify-content-between align-items-center">
+        <label for="choice{{ forloop.counter }}">{{forloop.counter}}){{ choice.choice_text }}</label>
+            <a class="btn btn-sm btn-danger" href="{% url 'polls:choice_edit' choice_id=choice.id poll_id=poll.id quiz_pk=quiz_pk  %}" role="button">Edit</a>
+        </h5>
+
+
+
+<!--        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">-->
+<!--        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>-->
+<!--        <br>-->
+        {% endfor %}
+
+        <a class="btn btn-warning mt-3" href="{% url 'polls:quiz-detail' quiz_pk=quiz_pk  %}" role="button">Back</a>
+
+
+</div>
+
+{% endblock content %}
+
+
+
+
+

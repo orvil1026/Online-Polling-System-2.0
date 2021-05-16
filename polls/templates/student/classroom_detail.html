@@ -1,0 +1,62 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% include 'includes/student-sidebar.html' %}
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Classroom Details</h1>
+
+  </div>
+  <hr>
+    <div class="row justify-content-center">
+
+      <h3>{{ classroom.c_name }}</h3>
+  </div>
+    <div class="row justify-content-center">
+
+      <h3>Class Id:{{ classroom.class_id }}</h3>
+  </div>
+</div>
+<hr>
+<div class="container">
+
+    <div class="row justify-content-center">
+
+   {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+
+  </div>
+</div>
+
+{% for quiz in quiz_set %}
+{% if forloop.counter0|divisibleby:3 %} <div class="row"> {%  endif %}
+    <div class="col-md-4">
+    <div class="card text-center">
+
+  <div class="card-body text-white bg-dark">
+    <h5 class="card-title">{{quiz.quiz_name}}</h5>
+    <p class="card-text">Quiz Id:{{object.quiz_id}}<br>
+
+    </p>
+    {% if quiz.active %}
+    <a href="{% url 'polls:list' quiz.id %}" class="btn btn-primary">Enter</a>
+    {% endif %}
+  </div>
+
+    </div>
+    </div>
+{%  if forloop.counter|divisibleby:3 or forloop.last %}</div><br>{%  endif %}
+{%  endfor %}
+
+
+{% endblock %}
