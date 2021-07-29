@@ -34,7 +34,7 @@ The Online Polling System is built for teachers to help them during online lectu
 <h2>Project snapshot</h2>
 <h3>Home page</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102845731-2edaa000-4434-11eb-8a66-658223bb5bdc.png" width="100%"</img> 
+    <img src="![image](https://user-images.githubusercontent.com/58859056/127437796-bfe0e077-9f58-4757-9468-4f736fb612f4.png)" width="100%"</img> 
 </div>
 
 <h3>Admin Login Page</h3>
