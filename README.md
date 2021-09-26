@@ -1,5 +1,8 @@
 # Online-polling-system-for-lectures
-The Online Polling System is built for teachers to help them during online lectures. The admin can create a quiz and will have to create a quiz id for the quiz. The students will have to enter the quiz id given by the teacher vote in the quiz.The results will be displayed in graphical format.The user cannot vote for the same quiz twice.
+The Online Polling System is built for teachers to help them during online lectures. The aim of this project is to create online poll system-based study software for students to
+enhance their teaching understanding and push their knowledge Students can use this
+software on any platform as it is a open-source software It comes with low system
+requirements. By student user perspective only a code has to be entered.
 <h6>• It will make students more attentive.<br>
 • It will facilitate the learning experience of students.<br>
 • The software will bemuch more accessible and user friendly for students as it has simpler UI.<br>
