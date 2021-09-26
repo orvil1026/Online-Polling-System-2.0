@@ -34,59 +34,65 @@ The Online Polling System is built for teachers to help them during online lectu
 <h2>Project snapshot</h2>
 <h3>Home page</h3>
 <div align="center">
-    <img src="![image](https://user-images.githubusercontent.com/58859056/127437796-bfe0e077-9f58-4757-9468-4f736fb612f4.png)" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815335-24d095d8-21e3-48e6-ab42-75ca4a9e8535.png" width="100%"</img> 
 </div>
 
-<h3>Admin Login Page</h3>
-<h4>Enter the username and password created while making the superuser.</h4>
+<h3>Login Page</h3>
+
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846313-a3faa500-4435-11eb-998d-1f0894034238.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815387-39e1b625-870d-415a-959b-797de1e55b02.png" width="100%"</img> 
 </div>
 
-<h3>Admin Home Page</h3>
+<h3>Teacher Home Page</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846548-3e5ae880-4436-11eb-8d8e-abe26bef285d.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815421-eeedaafb-76a1-4b99-8c2a-d078d410821d.png" width="100%"</img> 
 </div>
 
-<h3>Add Quiz Page</h3>
+<h3>Create Quiz Page</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846600-677b7900-4436-11eb-83ae-bf12d0f583d1.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815450-9dda8546-137c-4d91-8865-859342c7593d.png" width="100%"</img> 
 </div>
 
-<h3>Polls list Page</h3>
+<h3>Created Quizzes</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846662-9265cd00-4436-11eb-8a35-cb2c858fcc38.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815472-b96a4aff-6e5b-4408-bd6c-bb39b409d90d.png" width="100%"</img> 
 </div>
 
-<h3>User Login page</h3>
+<h3>Create Classroom</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846743-ce009700-4436-11eb-9593-b20f6c854545.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815501-9ca9c783-010b-4371-a33b-0c7f081f99f4.png" width="100%"</img> 
 </div>
 
-<h3>User Registration Page</h3>
+<h3>Created Classrooms</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846743-ce009700-4436-11eb-9593-b20f6c854545.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815536-0e5af000-1b5c-4487-a079-f56bfbe27b99.png" width="100%"</img> 
 </div>
 
-<h3>Enter Quiz id Page</h3>
+<h3>Student Home Page</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102846885-33548800-4437-11eb-942d-dae98b61dcdc.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815550-71db2626-6be8-40ef-92a0-a440d61f96d6.png" width="100%"</img> 
 </div>
 
-<h3>Poll list page</h3>
+<h3>Join Quiz</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102848476-eb376480-443a-11eb-8a18-96826b2b90eb.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815579-8edd84df-d7de-4c7e-89ff-cf49a7824b1d.png" width="100%"</img> 
 </div>
 
-<h3>Vote page</h3>
+<h3>Quiz Question</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102848279-7532fd80-443a-11eb-8f90-39bec53d47d7.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815641-bf0cb743-0e1b-48e7-b783-104ad929569a.png" width="100%"</img> 
 </div> 
 
-<h3>Results page</h3>
+<h3>Question Results</h3>
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/58859056/102848338-9c89ca80-443a-11eb-84d9-b180ee7baeec.png" width="100%"</img> 
+    <img src="https://user-images.githubusercontent.com/58859056/134815689-ce1ecfa2-f76e-4d53-a869-d1e4bbeda2c4.png" width="100%"</img> 
 </div> 
+
+<h3>Join Classroom</h3>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/58859056/134815731-b9b1d2ca-b3bc-47b5-89b3-0543a28d3a1d.png" width="100%"</img> 
+</div> 
+
 
 <h2>Acknowledgment</h2>
 
