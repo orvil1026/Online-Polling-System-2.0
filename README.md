@@ -21,7 +21,7 @@ requirements. By student user perspective only a code has to be entered.
 
 <h4>or simply download using the url below</h4>
 <code> https://github.com/orvil1026/Online-polling-system/archive/master.zip </code><br>
-<h4> Install Requirements </h4>
+<h2> Install Requirements </h2>
 <code>pip install -r requirements.txt</code>
 
 
